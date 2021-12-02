@@ -22,7 +22,7 @@
 
 - Get a notifications on the system tray (Windows) or terminal (Mac)  whenever your friends, favorite YouTubers etc. are playing Roblox.
 - No coding required!! 
-- <a href="installer_windows/RobloxOnlineNotifier_setup.exe">Installer for Windows</a>
+- <a href="https://www.dropbox.com/s/ezkygyg72juz0qy/RobloxOnlineNotifier_setup.exe?dl=0">Installer for Windows</a>
 - <a href="zip_mac/RobloxOnline.zip">Unzip and run for macOS
 - <a href="src/ROBLOX_ONLINE_NOTIFIER.py">Source code included!
 - MIT license
