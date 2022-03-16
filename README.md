@@ -35,7 +35,7 @@
 
 | ``'-.,_,.-'``'-.,_,.='``'-.,_,.-'``'-.,_,.'`` 1 - Mac | Screenshot |
 | -------------------------------------------------------------- |- |
-Screenshot on Mac.|<img src="001.png" width="400"/> |
+Screenshot on Mac - Copy the app to programs folder<br>Does not work inside the DMG image!|<img src="001.png" width="400"/> |
 
 | ``'-.,_,.-'``'-.,_,.='``'-.,_,.-'``'-.,_,.'`` 2 - Windows | Screenshot |
 | -------------------------------------------------------------- |- |
