@@ -1,0 +1,100 @@
+MDScreen:
+    BoxLayout:
+        id: my_boxlayout
+        orientation: "vertical"
+        size: root.width, root.height
+        rows: 2
+        Label:
+            text: ""
+            size_hint: 1, .1
+        BoxLayout:
+            id: label_updatetime_boxlayout
+            orientation: "horizontal"
+            cols: 3
+            rows: 1
+            size_hint: .9, .2
+            Image:
+                source: 'bild.png'
+                size_hint: 1, 1
+                halign: "center"
+            Label:
+                id: update_time_label
+                text: 'Update time'
+                font_size: 16
+                size_hint: .3, .2
+                halign: "left"
+            TextInput:
+                id: update_time_input
+                text: str(app.update_time_input)
+                size_hint: .1, .5
+                multiline: False
+                on_text_validate: app.set_number(update_time_input, update_time_input.text)
+        BoxLayout:
+            id: label_updatetime_boxlayout
+            orientation: "horizontal"
+            cols: 3
+            rows: 1
+            size_hint: .9, .2
+            Label:
+                id: label_blink_often
+                text: 'Blink how often'
+                font_size: 16
+                size_hint: .5, .2
+            TextInput:
+                id: textinput_blink_how_often
+                text: str(app.textinput_blink_how_often)
+                size_hint: .1, .5
+                multiline: False
+                on_text_validate: app.set_number(textinput_blink_how_often, textinput_blink_how_often.text)
+            Label:
+                id: label_blink_how_many_seconds
+                text: 'Blink how many seconds'
+                font_size: 16
+                size_hint: .3, .2
+                halign: "left"
+            TextInput:
+                id: textinput_blink_how_many_seconds
+                text: str(app.textinput_blink_how_many_seconds)
+                size_hint: .1, .5
+                multiline: False
+                on_text_validate: app.set_number(textinput_blink_how_many_seconds, textinput_blink_how_many_seconds.text)
+
+
+        ScrollView:
+            id: ScrollView_1
+            MDList:
+                id: MDList_1
+        TextInput:
+            id: add_accounts
+            text: app.read_txt_file(textfile=app.accountfile, liste=False)
+            size_hint: 1, .3
+        Button:
+            id: open_roblox_account_list_button
+            text: app.edit_account_text
+            size_hint: 1, .1
+            on_release: app.editaccountlist()
+        #Button:
+        #    id: save_new_list_button
+        #    text: "Update Account List"
+        #    size_hint: 1, .1
+        #    on_release: print('''app.updaterobloxlist(add_accounts.text)''')
+        BoxLayout:
+            id: show_toast_box_layout
+            orientation: "horizontal"
+            cols: 2
+            rows: 1
+            size_hint: .9, .3
+            Label:
+                id: label_show_windows_notification
+                text: 'Show Windows Toast Notification: '
+                font_size: 16
+                size_hint: .7, .2
+            Switch:
+                id: switch_show_toast_notification
+                active: False
+                font_size: 16
+                on_active: print('app.switch_click(self, self.active)')
+                size_hint: .3, .2
+        Label:
+            text: ''
+            size_hint: 1, .05
