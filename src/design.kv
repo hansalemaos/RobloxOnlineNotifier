@@ -1,0 +1,198 @@
+#:import wb webbrowser
+#app / root / self
+<ItemDrawer>:
+    theme_text_color: "Custom"
+    on_release:
+        self.parent.set_color_item(self)
+        app.gedrueckt(self.text)
+    IconLeftWidget:
+        icon: root.icon
+        theme_text_color: "Custom"
+        text_color: root.text_color
+
+<ContentNavigationDrawer>:
+    orientation: "vertical"
+    padding: "8dp"
+    spacing: "8dp"
+    AnchorLayout:
+        anchor_x: "left"
+        size_hint_y: None
+        height: avatar.height
+        Image:
+            id: avatar
+            size_hint: None, None
+            size: "256dp", "256dp"
+            source: app.robloximage0
+    MDLabel:
+        id: primlabel
+        text: app.title
+        font_style: "Button"
+        adaptive_height: True
+    MDLabel:
+        id: sublabel
+        text: app.subtitlel0
+        font_style: "Caption"
+        adaptive_height: True
+    ScrollView:
+        id: scrollview_menu
+        DrawerList:
+            id: md_list
+
+<Tela1>:
+    name: 'tela1'
+    id: tela1
+    MDNavigationLayout:
+        id: navigation_layout
+        ScreenManager:
+            id: screen_manager
+            MDScreen:
+                id: md_screen
+                MDBoxLayout:
+                    id: box_layout
+                    orientation: 'vertical'
+                    MDToolbar:
+                        id: toolbar
+                        title: app.menutitel
+                        elevation: 10
+                        left_action_items: [['menu', lambda x: app.open_navigationbar()]]
+                    MDGridLayout:
+                        id: gridlayout_config
+                        cols: 1
+                        halign : "center"
+                        MDTextField:
+                            id: update_time_input
+                            hint_text: "Update after how many seconds"
+                            text: str(app.update_time_input)
+                            multiline: False
+                            #size_hint: .8, 1
+                            on_text_validate:
+                                app.update_time_input = abs(int(update_time_input.text)) if str(update_time_input.text).isnumeric() and abs(int(update_time_input.text)) >=1 else app.update_time_input
+                                update_time_input.text = str(app.update_time_input)
+                                app.write_config_file()
+                            #halign : "center"
+                        MDLabel:
+                            id: label_show_windows_notification
+                            text: app.space_before +'Show System Notification (if available): '
+                            #size_hint: .8, 1
+                            #halign : "center"
+                        MDSwitch:
+                            id: switch_show_toast_notification
+                            active: app.blink_or_vibrate
+                            size_hint: None, None
+                            size: "36dp", "36dp"
+                            on_state: app.click_on_md_switch(self.active)
+                            #halign : "center"
+                    Widget:
+                    Widget:
+                    Widget:
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            ContentNavigationDrawer:
+                id: content_drawer
+
+<Tela2>:
+    name: 'tela2'
+    MDNavigationLayout:
+        id: navigation_layout
+        ScreenManager:
+            id: screen_manager
+            MDScreen:
+                id: md_screen
+                MDBoxLayout:
+                    id: box_layout
+                    orientation: 'vertical'
+                    MDToolbar:
+                        id: toolbar
+                        title: app.menutitel
+                        elevation: 10
+                        left_action_items: [['menu', lambda x: app.open_navigationbar()]]
+                    MDGridLayout:
+                        id: gridlayout_about
+                        size_hint: .9, .1
+                        cols: 1
+                        MDRaisedButton:
+                            id: button_open_website
+                            text: 'Visit me on Github'
+                            #size_hint: .5, .2
+                            halign : "center"
+                            on_release: wb.open(app.webpagetoopen1)
+                    Widget:
+        MDNavigationDrawer:
+            id: nav_drawer
+            ContentNavigationDrawer:
+                id: content_drawer
+
+
+<Tela0>:
+    name: 'tela0'
+    MDNavigationLayout:
+        name : 'navigation_layout'
+        id: navigation_layout
+        ScreenManager:
+            id: screen_manager
+            MDScreen:
+                id: md_screen
+                MDBoxLayout:
+                    id: box_layout
+                    orientation: 'vertical'
+                    MDToolbar:
+                        id: toolbar
+                        title: app.menutitel
+                        elevation: 10
+                        left_action_items: [['menu', lambda x: app.open_navigationbar()]]
+                    MDGridLayout:
+                        id: gridlayout_addnew
+                        cols: 2
+                        size_hint: 1, .05
+                        MDLabel:
+                            id: label_add_new_player
+                            text: app.space_before + 'Add new player: '
+                            size_hint: .5, .1
+
+                        TextInput:
+                            id: textbox_new_player
+                            text: ''
+                            multiline: False
+                            size_hint: .5, .1
+                            on_text_validate:
+                                app.add_new_player(textbox_new_player.text)
+                    ScrollView:
+                        id: scroll_view_main_page
+                        size_hint: 1, 1
+                        MDList:
+                            id: list_to_delete
+        MDNavigationDrawer:
+            id: nav_drawer
+            ContentNavigationDrawer:
+                id: content_drawer
+
+
+
+MDScreen:
+    MDNavigationLayout:
+        name : 'main_screen'
+        id: navigation_layout
+        ScreenManager:
+            id: screen_manager
+            MDScreen:
+                id: md_screen
+                MDBoxLayout:
+                    id: box_layout
+                    orientation: 'vertical'
+                    MDToolbar:
+                        id: toolbar
+                        title: app.menutitel
+                        elevation: 10
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
+                    #Widget:
+                        #id: widget_1
+                    ScrollView:
+                        id: scroll_view_main_page
+                        size_hint: 1, 1
+                        MDList:
+                            id: liste
+        MDNavigationDrawer:
+            id: nav_drawer
+            ContentNavigationDrawer:
+                id: content_drawer

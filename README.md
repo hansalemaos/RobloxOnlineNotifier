@@ -24,7 +24,9 @@
 - Get a notifications whenever your friends, favorite YouTubers etc. are playing Roblox.
 - No coding required!! 
 - <a href="https://www.dropbox.com/s/ezkygyg72juz0qy/RobloxOnlineNotifier_setup.exe?dl=0">Installer for Windows</a>
-- <a href="RobloxOnlineNotifier.dmg">DMG for MacOS - app has to be copied to programs folder. It won't work inside the DMG image! </a>
+- <a href="bin/RobloxOnlineNotifier.dmg">DMG for MacOS - app has to be copied to programs folder. It won't work inside the DMG image! </a>
+- <a href="bin/RobloxOnlineNotfier_linux.tar.xz">For Linux </a>
+- <a href="bin/RobloxOnlineNotifier_android.apk">For Android </a>
 - <a href="src/main.py">Source code included!</a>
 - MIT license
 
@@ -33,14 +35,21 @@
 ### Tutorial and things you have to know:
 
 
-| ``'-.,_,.-'``'-.,_,.='``'-.,_,.-'``'-.,_,.'`` 1 - Mac | Screenshot |
+| ``'-.,_,.-'``'-.,_,.='``'-.,_,.-'``'-.,_,.'`` 1  | Screenshot |
 | -------------------------------------------------------------- |- |
-Screenshot on Mac.|<img src="001.png" width="400"/> |
+Check if your friends / YouTubers are online|<img src="001.png" width="400"/> |
 
-| ``'-.,_,.-'``'-.,_,.='``'-.,_,.-'``'-.,_,.'`` 2 - Windows | Screenshot |
+| ``'-.,_,.-'``'-.,_,.='``'-.,_,.-'``'-.,_,.'`` 2  | Screenshot |
 | -------------------------------------------------------------- |- |
-Screenshot on Windows.|<img src="002.png" width="400"/> |
+Easy to configure|<img src="002.png" width="400"/> |
 
+| ``'-.,_,.-'``'-.,_,.='``'-.,_,.-'``'-.,_,.'`` 3  | Screenshot |
+| -------------------------------------------------------------- |- |
+Add or remove players|<img src="003.png" width="400"/> |
+
+| ``'-.,_,.-'``'-.,_,.='``'-.,_,.-'``'-.,_,.'`` 4  | Screenshot |
+| -------------------------------------------------------------- |- |
+Configuration settings|<img src="004.png" width="400"/> |
 
 ## License
 
